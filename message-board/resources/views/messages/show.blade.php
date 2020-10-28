@@ -7,7 +7,11 @@
         <tr>
             <th>id</th>
             <td>{{ $message->id }}</td>
-        </tr>        
+        </tr>
+        <tr>
+            <th>タイトル</th>
+            <td>{{ $message->title }}</td>
+        </tr>
         <tr>
             <th>メッセージ</th>
             <td>{{ $message->content }}</td>

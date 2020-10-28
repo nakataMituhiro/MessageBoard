@@ -48,10 +48,12 @@ class MessagesController extends Controller
     {
         //バリデーション
         $request->validate([
+                'title' => 'required|max:255',
                 'content' => 'required|max:255',
             ]);
 
         $message = new Message;
+        $message->title = $request->title;
         $message->content = $request->content;
         $message->save();
         
@@ -103,6 +105,7 @@ class MessagesController extends Controller
     {
         //バリデーション
         $request->validate([
+                'title' => 'required|max:255',
                 'content' => 'required|max:255',
             ]);
 
@@ -110,6 +113,7 @@ class MessagesController extends Controller
         $message = Message::findOrFail($id);
         
         //メッセージを更新
+        $message->title = $request->title;
         $message->content = $request->content;
         $message->save();
         
